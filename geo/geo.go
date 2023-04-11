@@ -7,6 +7,7 @@ import (
 	"net"
 	"net/http"
 	"runtime"
+	"time"
 
 	"github.com/charmbracelet/log"
 	scriptish "github.com/ganbarodigital/go_scriptish"
@@ -143,6 +144,15 @@ func macUint64() uint64 {
 	return uint64(0)
 }
 
-func localSearch() {
-	// TODO:
+func checkNetwork() {
+	hostName := "google.com"
+	portNum := "80"
+	seconds := 5
+	timeOut := time.Duration(seconds) * time.Second
+
+	conn, err := net.DialTimeout("tcp", hostName+":"+portNum, timeOut)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Remote address: %s\nConnection valid.\n", conn.RemoteAddr())
 }

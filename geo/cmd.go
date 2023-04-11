@@ -10,7 +10,7 @@ import (
 var Cmd = &Z.Cmd{
 	Name:        `geo`,
 	Aliases:     []string{``},
-	Usage:       `[help]`,
+	Usage:       `COMMAND|[help]`,
 	Version:     `v0.0.1`,
 	Copyright:   `Copyright Micah Nadler 2023`,
 	License:     `Apache-2.0`,
@@ -23,7 +23,6 @@ var Cmd = &Z.Cmd{
 		routerCmd,
 		dnsCmd,
 		macCmd,
-		// localCmd,
 		help.Cmd,
 	},
 }
@@ -114,24 +113,6 @@ var dnsCmd = &Z.Cmd{
 
 	Call: func(x *Z.Cmd, args ...string) error {
 		dnsSearch()
-		return nil
-	},
-}
-
-var localCmd = &Z.Cmd{
-	Name:        `local`,
-	Aliases:     []string{``},
-	Usage:       `[help]`,
-	Version:     `v0.0.1`,
-	Copyright:   `Copyright Micah Nadler 2023`,
-	License:     `Apache-2.0`,
-	Summary:     help.S(_local),
-	Description: help.D(_local),
-
-	Commands: []*Z.Cmd{help.Cmd},
-
-	Call: func(x *Z.Cmd, args ...string) error {
-		localSearch()
 		return nil
 	},
 }
