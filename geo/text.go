@@ -19,6 +19,3 @@ var _dns string
 
 //go:embed text/en/mac.md
 var _mac string
-
-//go:embed text/en/local.md
-var _local string
