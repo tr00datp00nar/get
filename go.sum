@@ -19,6 +19,16 @@ github.com/elliotchance/orderedmap v1.5.0/go.mod h1:wsDwEaX5jEoyhbs7x93zk2H/qv0z
 github.com/fatih/color v1.10.0/go.mod h1:ELkj/draVOlAH/xkhN6mQ50Qd0MPOk5AAr3maGEBuJM=
 github.com/fatih/color v1.13.0 h1:8LOYc1KYPPmyKMuN8QV2DNRWNbLo6LZ0iLs8+mlH53w=
 github.com/fatih/color v1.13.0/go.mod h1:kLAiJbzzSOZDVNGyDpeOxJ47H46qBXwg5ILebYFFOfk=
+github.com/ganbarodigital/go_envish/v3 v3.0.1 h1:Vn7w0ZORIOInXKI+DHaPeajDMeI4Ge8Jx6uwxPQGqb0=
+github.com/ganbarodigital/go_envish/v3 v3.0.1/go.mod h1:N03YV+jsRS04n+oP8D6uf1Yd6XYW0MH/HA0Btch6dX0=
+github.com/ganbarodigital/go_glob v1.0.0 h1:WqTFArtji400U7e84N8qUmUM6L8Rgt2s8ynla6f4D+Q=
+github.com/ganbarodigital/go_glob v1.0.0/go.mod h1:6FIc7UJ1CEsvqMDBb5x5y4eY926Bcfbw4YUSbiBiiqM=
+github.com/ganbarodigital/go_pipe/v5 v5.2.0 h1:tBSWNvv62Nz922HiaF7KXN6AMqeXuaQLKw2/M0hg2Dc=
+github.com/ganbarodigital/go_pipe/v5 v5.2.0/go.mod h1:CdJgaSSDIBpRs7Sw/jsdEyPtmqpJk55M6aYoQkMh6Pk=
+github.com/ganbarodigital/go_scriptish v1.4.0 h1:g9sdAhOk6pLjaCYu3KXu/qvBtsqQE520yUNYvNLbc9E=
+github.com/ganbarodigital/go_scriptish v1.4.0/go.mod h1:XRe5Y47KnaLUe31fobdgsbr+yrD4vcTrwcwrUphEp0E=
+github.com/ganbarodigital/go_shellexpand v0.1.0 h1:NIU3syhGIWIGQkKR+itN7YNlqQp6ay4YSuyeU+0Q76M=
+github.com/ganbarodigital/go_shellexpand v0.1.0/go.mod h1:vi99uR3k8wGpMfVTuQ4E8+OMMOfFs2CqTCupR+IeXdQ=
 github.com/go-logfmt/logfmt v0.6.0 h1:wGYYu3uicYdqXVgoYbvnkrPVXkuLM1p1ifugDMEdRi4=
 github.com/go-logfmt/logfmt v0.6.0/go.mod h1:WYhtIu8zTZfxdn5+rREduYbwxfcBr/Vr6KEVveWlfTs=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=

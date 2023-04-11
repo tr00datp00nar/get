@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/charmbracelet/log v0.2.1
+	github.com/ganbarodigital/go_scriptish v1.4.0
 	github.com/icelain/jokeapi v0.0.0-20221203150936-7f9bde47b3c5
 	github.com/rwxrob/bonzai v0.20.10
 	github.com/rwxrob/conf v0.8.2
@@ -23,6 +24,10 @@ require (
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/elliotchance/orderedmap v1.5.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
+	github.com/ganbarodigital/go_envish/v3 v3.0.1 // indirect
+	github.com/ganbarodigital/go_glob v1.0.0 // indirect
+	github.com/ganbarodigital/go_pipe/v5 v5.2.0 // indirect
+	github.com/ganbarodigital/go_shellexpand v0.1.0 // indirect
 	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/goccy/go-json v0.9.11 // indirect
 	github.com/goccy/go-yaml v1.9.6 // indirect
