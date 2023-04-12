@@ -10,6 +10,7 @@ import (
 	"github.com/tr00datp00nar/get/joke"
 	"github.com/tr00datp00nar/get/manga"
 	"github.com/tr00datp00nar/get/url"
+	"github.com/tr00datp00nar/get/weather"
 	"github.com/tr00datp00nar/get/web"
 )
 
@@ -28,6 +29,7 @@ var Cmd = &Z.Cmd{
 		manga.Cmd,
 		url.Cmd,
 		yq.Cmd,
+		weather.Cmd,
 		web.Cmd,
 		help.Cmd,
 	},

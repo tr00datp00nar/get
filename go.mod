@@ -10,9 +10,11 @@ require (
 	github.com/rwxrob/conf v0.8.2
 	github.com/rwxrob/help v0.7.2
 	github.com/rwxrob/json v0.8.0
+	github.com/rwxrob/to v0.11.2
 	github.com/rwxrob/vars v0.6.4
 	github.com/rwxrob/yq v0.3.2
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
+	golang.org/x/text v0.4.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -49,12 +51,10 @@ require (
 	github.com/rwxrob/pegn v0.1.0 // indirect
 	github.com/rwxrob/structs v0.6.0 // indirect
 	github.com/rwxrob/term v0.2.8 // indirect
-	github.com/rwxrob/to v0.11.2 // indirect
 	golang.org/x/crypto v0.3.0 // indirect
 	golang.org/x/net v0.2.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/term v0.2.0 // indirect
-	golang.org/x/text v0.4.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
 )
