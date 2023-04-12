@@ -14,6 +14,9 @@ var _lan string
 //go:embed text/en/router.md
 var _router string
 
+//go:embed text/en/net.md
+var _net string
+
 //go:embed text/en/dns.md
 var _dns string
 

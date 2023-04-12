@@ -23,6 +23,7 @@ var Cmd = &Z.Cmd{
 		routerCmd,
 		dnsCmd,
 		macCmd,
+		netCmd,
 		help.Cmd,
 	},
 }
@@ -95,6 +96,24 @@ var macCmd = &Z.Cmd{
 
 	Call: func(x *Z.Cmd, args ...string) error {
 		macSearch()
+		return nil
+	},
+}
+
+var netCmd = &Z.Cmd{
+	Name:        `net`,
+	Aliases:     []string{``},
+	Usage:       `[help]`,
+	Version:     `v0.0.1`,
+	Copyright:   `Copyright Micah Nadler 2023`,
+	License:     `Apache-2.0`,
+	Summary:     help.S(_net),
+	Description: help.D(_net),
+
+	Commands: []*Z.Cmd{help.Cmd},
+
+	Call: func(_ *Z.Cmd, args ...string) error {
+		checkNetwork()
 		return nil
 	},
 }

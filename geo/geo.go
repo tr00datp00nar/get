@@ -23,10 +23,10 @@ var (
 // the current public IP address. Currently unable to remove the
 // trailing % sign.
 func wanSearch() {
-	res, _ := http.Get("https://api.ipify.org")
+	res, _ := http.Get("http://icanhazip.com")
 	ip, _ := io.ReadAll(res.Body)
 	curIP := to.String(ip)
-	fmt.Printf("Current WAN IP: %s\n", curIP)
+	fmt.Printf("%s\n", curIP)
 }
 
 // lanSearch uses the net package to query the system for network
@@ -44,7 +44,7 @@ func lanSearch() {
 		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
 			if ipnet.IP.To4() != nil {
 				ip := ipnet.IP.String()
-				fmt.Printf("Current IP: %s\n", ip)
+				fmt.Printf("%s\n", ip)
 			}
 		}
 	}
@@ -77,7 +77,7 @@ func routerSearch() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("Router IP: %s\n", result)
+		fmt.Printf("%s\n", result)
 	}
 }
 
@@ -106,7 +106,7 @@ func dnsSearch() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("DNS Nameserver: %s\n", result)
+		fmt.Printf("%s\n", result)
 	}
 }
 
@@ -154,5 +154,5 @@ func checkNetwork() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Remote address: %s\nConnection valid.\n", conn.RemoteAddr())
+	fmt.Printf("Checking %s via %s.......... Connection valid.\n", hostName, conn.LocalAddr().String())
 }
