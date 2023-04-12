@@ -35,6 +35,22 @@ var Cmd = &Z.Cmd{
 }
 ```
 
+## Included Branches
+
+### Joke
+Queries Sv443's Joke API (https://v2.jokeapi.dev/joke/) and returns a random joke.
+### Manga
+Uses `mangadex-dl` to manage mangadex downloads.
+Expects that `mangadex-dl` has been configured with all desired options and that a list of manga to maintain exists at `$XDG_CONFIG_HOME/mangadex/list.txt`.
+### Net
+Set of tools for getting network interface information.
+### Url
+Tools for working with URLs
+### Weather
+Queries `http://wttr.in` and returns the current weather.
+### Web
+Tool for making common web requests.
+
 ## Resources
 
 To learn more about Bonzai stateful command trees: https://github.com/rwxrob/bonzai
