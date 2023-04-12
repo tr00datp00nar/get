@@ -6,6 +6,7 @@ require (
 	github.com/charmbracelet/log v0.2.1
 	github.com/ganbarodigital/go_scriptish v1.4.0
 	github.com/icelain/jokeapi v0.0.0-20221203150936-7f9bde47b3c5
+	github.com/jackpal/gateway v1.0.10
 	github.com/rwxrob/bonzai v0.20.10
 	github.com/rwxrob/conf v0.8.2
 	github.com/rwxrob/help v0.7.2
@@ -14,7 +15,6 @@ require (
 	github.com/rwxrob/vars v0.6.4
 	github.com/rwxrob/yq v0.3.2
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	golang.org/x/text v0.4.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -52,9 +52,10 @@ require (
 	github.com/rwxrob/structs v0.6.0 // indirect
 	github.com/rwxrob/term v0.2.8 // indirect
 	golang.org/x/crypto v0.3.0 // indirect
-	golang.org/x/net v0.2.0 // indirect
+	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
-	golang.org/x/term v0.2.0 // indirect
+	golang.org/x/term v0.6.0 // indirect
+	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
 )

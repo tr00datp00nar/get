@@ -1,4 +1,4 @@
-package geo
+package net
 
 import (
 	_ "embed"
@@ -8,14 +8,14 @@ import (
 )
 
 var Cmd = &Z.Cmd{
-	Name:        `geo`,
+	Name:        `net`,
 	Aliases:     []string{``},
 	Usage:       `COMMAND|[help]`,
 	Version:     `v0.0.1`,
 	Copyright:   `Copyright Micah Nadler 2023`,
 	License:     `Apache-2.0`,
-	Summary:     help.S(_geo),
-	Description: help.D(_geo),
+	Summary:     help.S(_net),
+	Description: help.D(_net),
 
 	Commands: []*Z.Cmd{
 		wanCmd,
@@ -23,7 +23,7 @@ var Cmd = &Z.Cmd{
 		routerCmd,
 		dnsCmd,
 		macCmd,
-		netCmd,
+		checkCmd,
 		help.Cmd,
 	},
 }
@@ -100,15 +100,15 @@ var macCmd = &Z.Cmd{
 	},
 }
 
-var netCmd = &Z.Cmd{
-	Name:        `net`,
+var checkCmd = &Z.Cmd{
+	Name:        `check`,
 	Aliases:     []string{``},
 	Usage:       `[help]`,
 	Version:     `v0.0.1`,
 	Copyright:   `Copyright Micah Nadler 2023`,
 	License:     `Apache-2.0`,
-	Summary:     help.S(_net),
-	Description: help.D(_net),
+	Summary:     help.S(_check),
+	Description: help.D(_check),
 
 	Commands: []*Z.Cmd{help.Cmd},
 

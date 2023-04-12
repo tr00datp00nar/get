@@ -1,4 +1,4 @@
-package geo
+package net
 
 import (
 	"bytes"
@@ -11,6 +11,7 @@ import (
 
 	"github.com/charmbracelet/log"
 	scriptish "github.com/ganbarodigital/go_scriptish"
+	"github.com/jackpal/gateway"
 	"github.com/rwxrob/to"
 )
 
@@ -51,37 +52,18 @@ func lanSearch() {
 }
 
 func routerSearch() {
-	os := runtime.GOOS
-	switch os {
-	case "windows":
-		msg := "Unsupported operating system, exiting..."
-		log.Fatal(msg)
-	case "linux":
-		result, err := scriptish.NewPipeline(
-			scriptish.Exec("ip", "route"),
-			scriptish.Grep("^default via"),
-			scriptish.Head(1),
-			scriptish.CutFields("3"),
-		).Exec().TrimmedString()
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Printf("Router IP: %s\n", result)
-	case "darwin":
-		result, err := scriptish.NewPipeline(
-			scriptish.Exec("netstat -rn"),
-			scriptish.Grep("default"),
-			scriptish.Head(1),
-			scriptish.CutFields("2"),
-		).Exec().TrimmedString()
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Printf("%s\n", result)
+	gateway, err := gateway.DiscoverGateway()
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Printf("%s\n", gateway.String())
 	}
 }
 
 func dnsSearch() {
+
+	// TODO: Find a cross-platform solution rather than switching on the GOOS
+
 	os := runtime.GOOS
 	switch os {
 	case "windows":
@@ -96,7 +78,7 @@ func dnsSearch() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("DNS Nameserver: %s\n", result)
+		fmt.Printf("%s\n", result)
 	case "darwin":
 		result, err := scriptish.NewPipeline(
 			scriptish.Exec("grep", "-i", "nameserver", "/etc/resolv.conf"),
@@ -111,7 +93,7 @@ func dnsSearch() {
 }
 
 func macSearch() {
-	fmt.Printf("MAC: %16.16X\n", macUint64())
+	fmt.Printf("%16.16X\n", macUint64())
 }
 
 func macUint64() uint64 {
