@@ -8,7 +8,7 @@ import (
 var Cmd = &Z.Cmd{
 	Name:        `manga`,
 	Usage:       `[help]`,
-	Version:     `v0.0.1`,
+	Version:     `v0.1.0`,
 	Copyright:   `Copyright Micah Nadler 2023`,
 	License:     `Apache-2.0`,
 	Summary:     help.S(_manga),
