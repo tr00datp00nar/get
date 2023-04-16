@@ -2,14 +2,15 @@ package weather
 
 import (
 	"fmt"
-	"net/url"
 	"strings"
 
 	scriptish "github.com/ganbarodigital/go_scriptish"
+
+	"github.com/tr00datp00nar/fn"
 )
 
 func getWeather(location string) {
-	location = rawUrlEncode(strings.Title(location))
+	location = fn.RawUrlEncode(strings.Title(location))
 	withoutLocation := "https://wttr.in/?format=3"
 	withLocation := "https://wttr.in/" + location + "?format=3"
 
@@ -51,8 +52,4 @@ func getWeather(location string) {
 	// 	}
 	// 	fmt.Println(body)
 	// }
-}
-
-func rawUrlEncode(str string) string {
-	return strings.Replace(url.QueryEscape(str), "+", "%20", -1)
 }
