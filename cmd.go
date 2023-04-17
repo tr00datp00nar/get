@@ -14,6 +14,7 @@ import (
 	"github.com/rwxrob/yq"
 
 	"github.com/briandowns/spinner"
+	"github.com/tr00datp00nar/fn"
 	"github.com/tr00datp00nar/get/joke"
 	"github.com/tr00datp00nar/get/manga"
 	"github.com/tr00datp00nar/get/net"
@@ -21,6 +22,9 @@ import (
 	"github.com/tr00datp00nar/get/weather"
 	"github.com/tr00datp00nar/get/web"
 )
+
+var s1 = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#f4b8e4"))
+var s2 = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#8caaee"))
 
 var Cmd = &Z.Cmd{
 	Name:        `get`,
@@ -102,8 +106,7 @@ var updateCmd = &Z.Cmd{
 
 var newbonCmd = &Z.Cmd{
 	Name:        `newbon`,
-	Aliases:     []string{``},
-	Usage:       `[help]`,
+	Usage:       `<bonzaiBranchName> <templateName> | [COMMAND]`,
 	Version:     `v0.0.1`,
 	Copyright:   `Copyright Micah Nadler 2023`,
 	License:     `Apache-2.0`,
@@ -117,22 +120,13 @@ var newbonCmd = &Z.Cmd{
 		templateName := string(args[1])
 
 		cmd := "gh repo create " + bonzaiBranchName + " -p " + templateName + " --public"
-		c1 := exec.Command("bash", "-c", cmd)
-		c1.Stdout = os.Stdout
-		c1.Stderr = os.Stderr
-		c1.Run()
+		fn.ExecBash(cmd)
 
 		time.Sleep(5 * time.Second)
 
 		cmd2 := "git clone git@github.com:tr00datp00nar/" + bonzaiBranchName + " $HOME/Repos/github.com/tr00datp00nar/" + bonzaiBranchName
-		c2 := exec.Command("bash", "-c", cmd2)
-		c2.Stdout = os.Stdout
-		c2.Stderr = os.Stderr
-		c2.Run()
+		fn.ExecBash(cmd2)
 
 		return nil
 	},
 }
-
-var s1 = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#f4b8e4"))
-var s2 = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#8caaee"))
