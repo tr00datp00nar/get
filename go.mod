@@ -5,6 +5,8 @@ go 1.19
 replace github.com/tr00datp00nar/fn => ../fn
 
 require (
+	github.com/briandowns/spinner v1.23.0
+	github.com/charmbracelet/lipgloss v0.7.1
 	github.com/charmbracelet/log v0.2.1
 	github.com/ganbarodigital/go_scriptish v1.4.0
 	github.com/icelain/jokeapi v0.0.0-20221203150936-7f9bde47b3c5
@@ -25,7 +27,6 @@ require (
 	github.com/a8m/envsubst v1.3.0 // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
-	github.com/charmbracelet/lipgloss v0.7.1 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/elliotchance/orderedmap v1.5.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
