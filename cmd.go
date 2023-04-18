@@ -119,14 +119,17 @@ var newbonCmd = &Z.Cmd{
 		bonzaiBranchName := string(args[0])
 		templateName := string(args[1])
 
-		cmd := "gh repo create " + bonzaiBranchName + " -p " + templateName + " --public"
-		fn.ExecBash(cmd)
+		cmd := "gh repo create " + bonzaiBranchName + " -p " + templateName + " --public --clone"
+		_, _, err := fn.ExecBash(cmd)
 
-		time.Sleep(5 * time.Second)
+		// time.Sleep(5 * time.Second)
+		//
+		// cmd2 := "git clone git@github.com:tr00datp00nar/" + bonzaiBranchName + " $HOME/Repos/github.com/tr00datp00nar/" + bonzaiBranchName
+		// fn.ExecBash(cmd2)
 
-		cmd2 := "git clone git@github.com:tr00datp00nar/" + bonzaiBranchName + " $HOME/Repos/github.com/tr00datp00nar/" + bonzaiBranchName
-		fn.ExecBash(cmd2)
-
+		if err != nil {
+			log.Fatal(err)
+		}
 		return nil
 	},
 }
