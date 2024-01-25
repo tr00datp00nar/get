@@ -37,7 +37,7 @@ var expandCmd = &Z.Cmd{
 
 	Commands: []*Z.Cmd{help.Cmd},
 
-	Call: func(_ *Z.Cmd, args ...string) error {
+	Call: func(x *Z.Cmd, args ...string) error {
 		expandedUrl, err := ExpandUrl(args[0])
 		if err != nil {
 			log.Error(err)
@@ -60,7 +60,7 @@ var qrifyCmd = &Z.Cmd{
 
 	Commands: []*Z.Cmd{help.Cmd},
 
-	Call: func(_ *Z.Cmd, args ...string) error {
+	Call: func(x *Z.Cmd, args ...string) error {
 		Qrify(args...)
 		return nil
 	},

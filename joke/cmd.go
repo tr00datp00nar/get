@@ -21,7 +21,7 @@ var Cmd = &Z.Cmd{
 
 	Commands: []*Z.Cmd{help.Cmd},
 
-	Call: func(_ *Z.Cmd, args ...string) error {
+	Call: func(x *Z.Cmd, args ...string) error {
 		api := jokeapi.New()
 
 		response, err := api.Fetch()

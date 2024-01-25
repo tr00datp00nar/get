@@ -15,7 +15,7 @@ require (
 	github.com/rwxrob/conf v0.8.2
 	github.com/rwxrob/help v0.7.2
 	github.com/rwxrob/json v0.8.0
-	github.com/rwxrob/to v0.11.2
+	github.com/rwxrob/to v0.12.1
 	github.com/rwxrob/vars v0.6.4
 	github.com/rwxrob/yq v0.3.2
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e

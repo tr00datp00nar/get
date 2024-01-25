@@ -2,7 +2,6 @@ package weather
 
 import (
 	_ "embed"
-	"strings"
 
 	Z "github.com/rwxrob/bonzai/z"
 	"github.com/rwxrob/help"
@@ -20,16 +19,9 @@ var Cmd = &Z.Cmd{
 
 	Commands: []*Z.Cmd{help.Cmd},
 
-	Call: func(_ *Z.Cmd, args ...string) error {
-		location := strings.Join(args, " ")
+	Call: func(x *Z.Cmd, args ...string) error {
+		location := Z.ArgsOrIn(args)
 		getWeather(location)
-		// numArgs := len(args)
-		// if numArgs < 1 {
-		// 	getWeather("")
-		// }
-		// if numArgs >= 1 {
-		// 	getWeather(args[0])
-		// }
 		return nil
 	},
 }

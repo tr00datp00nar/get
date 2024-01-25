@@ -23,6 +23,7 @@ var Cmd = &Z.Cmd{
 		routerCmd,
 		dnsCmd,
 		macCmd,
+		wifiPasswdCmd,
 		checkCmd,
 		help.Cmd,
 	},
@@ -132,6 +133,24 @@ var dnsCmd = &Z.Cmd{
 
 	Call: func(x *Z.Cmd, args ...string) error {
 		dnsSearch()
+		return nil
+	},
+}
+
+var wifiPasswdCmd = &Z.Cmd{
+	Name:      `wifipass`,
+	Aliases:   []string{``},
+	Usage:     `[help]`,
+	Version:   `v0.0.1`,
+	Copyright: `Copyright Micah Nadler 2024`,
+	License:   `Apache-2.0`,
+	// Summary: help.S(_wifipass),
+	// Description: help.D(_wifipass),
+
+	Commands: []*Z.Cmd{help.Cmd},
+
+	Call: func(_ *Z.Cmd, args ...string) error {
+		wifiPasswd()
 		return nil
 	},
 }

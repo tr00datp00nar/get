@@ -37,7 +37,7 @@ var get = &Z.Cmd{
 	MinArgs: 1,
 	MaxArgs: 2,
 
-	Call: func(_ *Z.Cmd, args ...string) error {
+	Call: func(x *Z.Cmd, args ...string) error {
 		req := Req{U: args[0], D: ""}
 		if err := req.Submit(); err != nil {
 			return err

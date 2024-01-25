@@ -16,7 +16,7 @@ var Cmd = &Z.Cmd{
 
 	Commands: []*Z.Cmd{help.Cmd},
 
-	Call: func(_ *Z.Cmd, args ...string) error {
+	Call: func(x *Z.Cmd, args ...string) error {
 		PullManga()
 		return nil
 	},

@@ -92,6 +92,24 @@ func dnsSearch() {
 	}
 }
 
+func wifiPasswd() {
+	os := runtime.GOOS
+	switch os {
+	case "windows":
+		msg := "Unsupported operating system, exiting..."
+		log.Fatal(msg)
+	case "linux":
+		result, err := scriptish.NewPipeline(
+			scriptish.Exec("nmcli", "device", "wifi", "show-password"),
+			scriptish.ToStdout(),
+		).Exec().String()
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Printf("%s\n", result)
+	}
+}
+
 func macSearch() {
 	fmt.Printf("%16.16X\n", macUint64())
 }
