@@ -138,14 +138,14 @@ var dnsCmd = &Z.Cmd{
 }
 
 var wifiPasswdCmd = &Z.Cmd{
-	Name:      `wifipass`,
-	Aliases:   []string{``},
-	Usage:     `[help]`,
-	Version:   `v0.0.1`,
-	Copyright: `Copyright Micah Nadler 2024`,
-	License:   `Apache-2.0`,
-	// Summary: help.S(_wifipass),
-	// Description: help.D(_wifipass),
+	Name:        `wifipass`,
+	Aliases:     []string{``},
+	Usage:       `[help]`,
+	Version:     `v0.0.1`,
+	Copyright:   `Copyright Micah Nadler 2024`,
+	License:     `Apache-2.0`,
+	Summary:     help.S(_wifipass),
+	Description: help.D(_wifipass),
 
 	Commands: []*Z.Cmd{help.Cmd},
 
