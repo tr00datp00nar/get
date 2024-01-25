@@ -107,6 +107,9 @@ func wifiPasswd() {
 			log.Fatal(err)
 		}
 		fmt.Printf("%s\n", result)
+	case "darwin":
+		msg := "Unsupported operating system, exiting..."
+		log.Fatal(msg)
 	}
 }
 
