@@ -92,13 +92,25 @@ func dnsSearch() {
 	}
 }
 
-func wifiPasswd() {
-	os := runtime.GOOS
-	switch os {
+func wifiPasswd(network string) {
+	osType := runtime.GOOS
+	switch osType {
+	// Windows case is untested, may not work as intended
 	case "windows":
-		msg := "Unsupported operating system, exiting..."
-		log.Fatal(msg)
-	case "linux":
+		if network == "" {
+			msg := "Missing SSID. Exiting..."
+			log.Fatal(msg)
+		} else {
+			result, err := scriptish.NewPipeline(
+				scriptish.Exec("netsh", "wlan", "show", "profile name=", network, "key=clear"),
+				scriptish.ToStdout(),
+			).Exec().String()
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Printf("%s\n", result)
+		}
+	case "linux", "darwin":
 		result, err := scriptish.NewPipeline(
 			scriptish.Exec("nmcli", "device", "wifi", "show-password"),
 			scriptish.ToStdout(),
@@ -107,9 +119,6 @@ func wifiPasswd() {
 			log.Fatal(err)
 		}
 		fmt.Printf("%s\n", result)
-	case "darwin":
-		msg := "Unsupported operating system, exiting..."
-		log.Fatal(msg)
 	}
 }
 
