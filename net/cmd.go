@@ -150,7 +150,13 @@ var wifiPasswdCmd = &Z.Cmd{
 	Commands: []*Z.Cmd{help.Cmd},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		wifiPasswd()
-		return nil
+		if args[0] == "" {
+			wifiPasswd("")
+			return nil
+		} else {
+			network := Z.ArgsOrIn(args)
+			wifiPasswd(network)
+			return nil
+		}
 	},
 }

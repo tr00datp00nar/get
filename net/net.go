@@ -92,6 +92,12 @@ func dnsSearch() {
 	}
 }
 
+// Uses nmcli on Linux/Mac systems to get the current wifi password.
+// On Windows, uses netsh.
+// Requires the SSID of the current network to be entered as a parameter
+// on the command line.
+// $ c get net wifipass [SSID]
+// Can be aliased in the main Cmd for the monolith.
 func wifiPasswd(network string) {
 	osType := runtime.GOOS
 	switch osType {
